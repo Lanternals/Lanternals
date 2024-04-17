@@ -95,8 +95,7 @@ let options = {
     
      traitinv: {    
         sheetPage: sheetPages.traitinv,
-        traitsSheetPage: sheetPages.traits,
-        logSheetPage: sheetPages.inventorylog,
+        itemSheetPage: sheetPages.traits,
 
          traitsAmount: 24,
         sortTypes: ['Lanternal', 'Grimhalla', 'Both', ],
