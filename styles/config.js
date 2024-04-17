@@ -95,7 +95,7 @@ let options = {
     
      traitinv: {    
         sheetPage: sheetPages.traitinv,
-        traitSheetPage: sheetPages.traits,
+        traitsSheetPage: sheetPages.traits,
         logSheetPage: sheetPages.inventorylog,
 
          traitsAmount: 24,
