@@ -530,6 +530,10 @@ const inventory = async (options) => {
         let itemSheetArr = await fetchSheet(charadexInfo.itemSheetPage);
         let itemCardKey = Object.keys(itemSheetArr[0])[0];
 
+         // Fetch trait info from the trait sheet
+        let traitsSheetArr = await fetchSheet(charadexInfo.traitsSheetPage);
+        let traitsCardKey = Object.keys(traitsSheetArr[0])[0];
+
         // List.js options
         let itemOptions = {
             valueNames: sheetArrayKeys(sheetArray),
@@ -551,8 +555,22 @@ const inventory = async (options) => {
                         image: i.image,
                         itemlink: folderURL + "/items.html?" + itemCardKey + "=" + i[itemCardKey],
                         amount: singleCard[keyCreator(i.item)],
+
+                         // Merge the user's inventory with the item sheet
+        // Also remove any items they dont have atm
+        let traitinvTraitsArr = [];
+        traitsSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        traits: i.traits,
+                        image: i.image,
+                        traitslink: folderURL + "/traits.html?" + traitsCardKey + "=" + i[traitsCardKey],
+                        amount: singleCard[keyCreator(i.traits)],
                     };
                     inventoryItemArr.push(inventoryItems);
+                     traitinvTraitsArr.push(traitinvTraits);
                 };
             }
         });
@@ -566,6 +584,9 @@ const inventory = async (options) => {
 
         // Group by the item type
         let orderItems = Object.groupBy(inventoryItemArr, ({ type }) => type);
+
+                     // Group by the item type
+        let orderTraits = Object.groupBy(traitinvTraitsArr, ({ type }) => type);
 
         // Create Rows
         let rows = [];
@@ -582,11 +603,33 @@ const inventory = async (options) => {
                 cols.push(HTML);
             });
 
+              // Create Rows
+        let rows = [];
+        for (var i in orderTraits) {
+             // Get the headers and cols
+            let cols = [];
+            orderTraits[i].forEach((v) => {
+                let HTML = $("#traits-list-col").clone();
+                HTML.find(".traits-img").attr('src', v.image);
+                HTML.find(".traitslink").attr('href', v.traitslink);
+                HTML.find(".traits").html(v.traits);
+                HTML.find(".amount").html(v.amount);
+                cols.push(HTML);
+            });
+
+
             // Smack everything together
             let rowHTML = $("#item-list-section").clone().html([
                 $("#item-list-header").clone().html(i),
                 $("#item-list-row").clone().html(cols)
             ]);
+
+              // Smack everything together
+            let rowHTML = $("#traits-list-section").clone().html([
+                $("#traits-list-header").clone().html(i),
+                $("#traits-list-row").clone().html(cols)
+            ]);
+
 
             rows.push(rowHTML);
 
@@ -604,6 +647,8 @@ const inventory = async (options) => {
 
 
     } else {
+
+                    
 
         // Show pagination
         showPagination(sheetArray, charadexInfo.itemAmount);
