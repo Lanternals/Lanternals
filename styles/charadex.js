@@ -534,6 +534,10 @@ const inventory = async (options) => {
         let traitsSheetArr = await fetchSheet(charadexInfo.traitsSheetPage);
         let traitsCardKey = Object.keys(traitsSheetArr[0])[0];
 
+          // Fetch trait info from the trait sheet
+        let traitinvSheetArr = await fetchSheet(charadexInfo.traitinvSheetPage);
+        let traitinvCardKey = Object.keys(traitinvSheetArr[0])[0];
+
         // List.js options
         let itemOptions = {
             valueNames: sheetArrayKeys(sheetArray),
