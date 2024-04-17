@@ -97,7 +97,7 @@ let options = {
         traitinvsheetPage: sheetPages.traitinv,
         traitsSheetPage: sheetPages.traits,
 
-         traitsAmount: 24,
+         itemAmount: 24,
         sortTypes: ['Lanternal', 'Grimhalla', 'Both', ],
         
         searchFilterParams: ['Username'],
