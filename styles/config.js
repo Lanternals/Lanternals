@@ -19,7 +19,7 @@ let sheetPages = {
     prompts: "prompts",
     faq: "faq",
     staff: "mods",
-    traitinv: "trait inv",
+  
 
 }
 
@@ -88,23 +88,12 @@ let options = {
         logSheetPage: sheetPages.inventoryLog,
 
          itemAmount: 24,
-        sortTypes: ['Currency', 'Upgrade', 'Redesign', ],
+        sortTypes: ['Currency', 'Upgrade', 'Redesign', 'Trait', ],
 
          searchFilterParams: ['Username'],
     },
     
-     traitinv: {    
-        traitinvsheetPage: sheetPages.traitinv,
-        traitsSheetPage: sheetPages.traits,
-
-         itemAmount: 24,
-        sortTypes: ['Lanternal', 'Grimhalla', 'Both', ],
-        
-        searchFilterParams: ['Username'],
     
-    },
-
-
     /* Prompts
     /* --------------------------------------------------------------- */
     prompts: {
