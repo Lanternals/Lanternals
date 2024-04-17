@@ -94,12 +94,12 @@ let options = {
          searchFilterParams: ['Username'],
     },
     
-     traitinventory: {    
+     traitinv: {    
         sheetPage: sheetPages.traitinv,
         traitSheetPage: sheetPages.traits,
         traitinvlogSheetPage: sheetPages.traitinvlog,
 
-         traitAmount: 24,
+         itemAmount: 24,
         sortTypes: ['Lanternal', 'Grimhalla', 'Both', ],
         
         searchFilterParams: ['Username'],
