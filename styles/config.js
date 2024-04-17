@@ -20,7 +20,6 @@ let sheetPages = {
     faq: "faq",
     staff: "mods",
     traitinv: "trait inv",
-    traitinvlog: "trait inv log",
 
 }
 
@@ -97,7 +96,7 @@ let options = {
      traitinv: {    
         sheetPage: sheetPages.traitinv,
         traitSheetPage: sheetPages.traits,
-        traitinvlogSheetPage: sheetPages.traitinvlog,
+        logSheetPage: sheetPages.inventorylog,
 
          traitsAmount: 24,
         sortTypes: ['Lanternal', 'Grimhalla', 'Both', ],
