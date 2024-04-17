@@ -99,7 +99,7 @@ let options = {
         traitSheetPage: sheetPages.traits,
         traitinvlogSheetPage: sheetPages.traitinvlog,
 
-         itemAmount: 24,
+         traitsAmount: 24,
         sortTypes: ['Lanternal', 'Grimhalla', 'Both', ],
         
         searchFilterParams: ['Username'],
