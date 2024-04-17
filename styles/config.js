@@ -87,6 +87,7 @@ let options = {
         logSheetPage: sheetPages.inventoryLog,
     
         itemAmount: 24,
+          itemOrder: "asc",
         sortTypes: ['Currency', 'Upgrade', 'Redesign', 'Trait', 'Misc'],
         
         searchFilterParams: ['Username'],
