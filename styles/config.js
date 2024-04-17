@@ -90,13 +90,17 @@ let options = {
 
          itemAmount: 24,
         sortTypes: ['Currency', 'Upgrade', 'Redesign', ],
-        
-        sheetPage: sheetPages.traits,
-        traitSheetPage: sheetPages.traitinv,
+
+         searchFilterParams: ['Username'],
+    },
+    
+     traitinventory: {    
+        sheetPage: sheetPages.traitinv,
+        traitSheetPage: sheetPages.traits,
         traitinvlogSheetPage: sheetPages.traitinvlog,
 
          traitAmount: 24,
-        sortTypes: ['Currency', 'Upgrade', 'Redesign', ],
+        sortTypes: ['Lanternal', 'Grimhalla', 'Both', ],
         
         searchFilterParams: ['Username'],
     
