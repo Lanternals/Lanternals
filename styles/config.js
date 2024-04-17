@@ -2,7 +2,7 @@
 /* Sheet ID
 /* Your sheet ID
 /* ------------------------------------------------------------------- */
-let sheetID = "1bKw3I2_C7YZtmzDHXjZrciYou3N0RE7IVZJ2MS9F5_E";
+let sheetID = "1GwgfLizD3HQCieGia6di-TfU4E3EipT9Jb0BDZQwNak";
 
 
 /* ------------------------------------------------------------------- */
@@ -19,8 +19,6 @@ let sheetPages = {
     prompts: "prompts",
     faq: "faq",
     staff: "mods",
-    traitinv: "trait inv",
-  
 
 }
 
@@ -87,14 +85,15 @@ let options = {
         sheetPage: sheetPages.inventory,
         itemSheetPage: sheetPages.items,
         logSheetPage: sheetPages.inventoryLog,
-
-         itemAmount: 24,
-        sortTypes: ['Currency', 'Upgrade', 'Redesign', 'Trait', ],
-
-         searchFilterParams: ['Username'],
+    
+        itemAmount: 24,
+        sortTypes: ['Currency', 'MYO Slot', 'Pet', 'Trait', 'Misc'],
+        
+        searchFilterParams: ['Username'],
+    
     },
-    
-    
+
+
     /* Prompts
     /* --------------------------------------------------------------- */
     prompts: {
