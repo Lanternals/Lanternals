@@ -631,9 +631,9 @@ p:last-child {
     font-family: var(--cd-header-font-family);
     display: flex;
     padding: 1.5rem;
-    max-height: 100px;
+    max-height: 10px;
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 @media (min-width: 300px) {
