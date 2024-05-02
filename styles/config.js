@@ -15,7 +15,7 @@ let sheetPages = {
     inventory: "inventory",
     inventoryLog: "inventory log",
     items: "items",
-    traits: "traits",
+    pets: "pets",
     prompts: "prompts",
     faq: "faq",
     staff: "mods",
@@ -108,17 +108,17 @@ let options = {
     },
 
 
-    /* Traits
+    /* Pets
     /* --------------------------------------------------------------- */
-    traits: {
+    pets: {
     
-        sheetPage: sheetPages.traits,
+        sheetPage: sheetPages.pets,
 
         itemAmount: 24,
         itemOrder: "asc",
 
         filterColumn: 'Rarity',
-        searchFilterParams: ['Trait'],
+        searchFilterParams: ['Species'],
         fauxFolderColumn: 'Type',
     
     },
