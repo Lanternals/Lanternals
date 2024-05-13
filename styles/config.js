@@ -19,7 +19,8 @@ let sheetPages = {
     shop: "Shop",
 market: "Market",
 event: "Event Shop",
-    traits: "Traits",
+    lanternaltraits: "LantTraits",
+      grimtraits: "GrimTraits",
 bestiary: "bestiary",
     prompts: "Prompts",
     faq: "faq",
@@ -136,7 +137,8 @@ let options = {
         shopSheetPage: sheetPages.shop,
         marketSheetPage: sheetPages.market,
   eventSheetPage: sheetPages.event,
-             traitsSheetPage: sheetPages.traits,
+             lanternaltraitsSheetPage: sheetPages.lanternaltraits,
+              grimtraitsSheetPage: sheetPages.grimtraits,
         logSheetPage: sheetPages.inventorylog,
     
         itemAmount: 24,
@@ -162,9 +164,24 @@ let options = {
 
      /* Traits
     /* --------------------------------------------------------------- */
-    traits: {
+    lanternaltraits: {
     
-        sheetPage: sheetPages.traits,
+        sheetPage: sheetPages.lanternaltraits,
+
+        itemAmount: 12,
+        itemOrder: "desc",
+
+        filterColumn: 'Rarity',
+        searchFilterParams: ['Trait'],
+        fauxFolderColumn: 'Type',
+    
+    },
+    
+  /* Traits
+    /* --------------------------------------------------------------- */
+    grimtraits: {
+    
+        sheetPage: sheetPages.grimtraits,
 
         itemAmount: 12,
         itemOrder: "desc",
