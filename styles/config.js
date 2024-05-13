@@ -20,7 +20,7 @@ let sheetPages = {
 market: "Market",
 event: "Event Shop",
     traits: "Traits",
-beasts: "beasts",
+bestiary: "bestiary",
     prompts: "Prompts",
     faq: "faq",
     staff: "Mods",
@@ -178,9 +178,9 @@ let options = {
 
     /* Pets
     /* --------------------------------------------------------------- */
-    beasts: {
+    bestiary: {
     
-        sheetPage: sheetPages.beasts,
+        sheetPage: sheetPages.bestiary,
 
         itemAmount: 24,
         itemOrder: "asc",
