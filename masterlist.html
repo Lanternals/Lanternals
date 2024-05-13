@@ -12,7 +12,7 @@
     <!-- ----------------------------------------------------------------- -->
    <link rel="shortcut icon" type="image/png" href="assets/newicon.png" />
     <title>Lanternals</title>
-    <meta property="title" content="Lanternals" />
+    <meta property="title" content="Masterlist | Lanternals" />
     <meta property="type" content="website" />
     <meta property="url" content="https://lanternals.github.io/Lanternals/masterlist.html" />
     <meta property="image" content="assets/meta.png" />
@@ -77,7 +77,14 @@
             ----------------------------------------------------------------- -->
             <div class="card p-md-5 p-4 mb-4">
 
-                <h3 class="mb-0"><a href="masterlist.html">Species Masterlist</a></h3>
+                <div class="row no-gutters">
+                    <div class="col-md-10 col-9">
+                        <h3 class="mb-0"><a href="masterlist.html"><i class="fa-solid fa-image-portrait"></i> Species Masterlist</a></h3>
+                    </div>
+                    <div class="col-md-2 col-3">
+                        <a class="btn btn-primary d-block" href="masterlist.html" style="font-size:0.83rem;">Reset Filters</a>
+                    </div>
+                </div>
 
                 <!-- Faux Folders
                 <-- Remove this if you'd like to make your own buttons instead!
@@ -87,6 +94,44 @@
                     <div class="row no-gutters mx-n1"></div>
                 </div>
 
+              <!-- Faux Folders
+                <-- Remove this if you'd like to make your own buttons instead!
+                ------------------------------------------------------------------- -->
+                <hr class="mb-3">
+                <!-- ROW 1 NPC, OFFICIAL DESIGN + GUEST DESIGN -->
+                <div class="row no-gutters m-n1 pb-2 px-3 justify-content-center" id="filter-buttons">
+
+                    <div class="col-md-5 col-7 p-1">
+                        <div class="px-2 pl-md-5">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=myo%20slot"><i class="fa-solid fa-ticket"></i> MYO Slots</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-6 p-1">
+                        <div class="px-2 pr-md-5">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=myo%20design"><i class="fa-solid fa-pencil"></i> MYO Designs</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6 p-1">
+                        <div class="px-2 pl-md-4">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=official%20design"><i class="fa-solid fa-star"></i> Official Designs</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6 p-1">
+                        <div class="px-2">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=npc"><i class="fa-solid fa-fire-flame-curved"></i> NPCs</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6 p-1">
+                        <div class="px-2 pr-md-4">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=guest%20design"><i class="fa-solid fa-moon"></i> Guest Designs</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Filters -->
                 <div style="display:none;" id="charadex-filters">
                     <hr class="w-100 mb-4">
@@ -94,22 +139,21 @@
 
                         <!-- Custom Filter -->
                         <div class="col-md-3 col-12 p-1" style="display: none;">
-                            <select class="form-control bg-faded" id="filter"></select>
+                            <select class="form-control" id="filter"></select>
                         </div>
 
                         <!-- Search Filter -->
                         <div class="col-md-3 col-3 p-1" style="display: none;">
-                            <select class="form-control bg-faded" id="search-filter"></select>
+                            <select class="form-control" id="search-filter"></select>
                         </div>
 
                         <!-- Search Bar -->
                         <div class="col-md col-9 p-1">
-                            <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
+                            <input class="form-control search" type="search" placeholder="Search" id="search">
                         </div>
 
                     </div>
                 </div>
-
                 <!-- Pagination -->
                 <div style="display: none;" id="charadex-pagination">
                     <hr class="mb-4 mt-4">
