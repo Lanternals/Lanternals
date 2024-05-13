@@ -539,8 +539,12 @@ const inventory = async (options) => {
         let eventCardKey = Object.keys(eventSheetArr[0])[0];
 
           // Fetch item info from the trait sheet
-        let traitsSheetArr = await fetchSheet(charadexInfo.traitsSheetPage);
-        let traitsCardKey = Object.keys(traitsSheetArr[0])[0];
+        let lanternaltraitsSheetArr = await fetchSheet(charadexInfo.lanternaltraitsSheetPage);
+        let lanternaltraitsCardKey = Object.keys(lanternaltraitsSheetArr[0])[0];
+
+         // Fetch item info from the trait sheet
+        let grimtraitsSheetArr = await fetchSheet(charadexInfo.grimtraitsSheetPage);
+        let grimtraitsCardKey = Object.keys(grimtraitsSheetArr[0])[0];
 
         // List.js options
         let itemOptions = {
@@ -600,14 +604,31 @@ const inventory = async (options) => {
             }
         });
  // traits
-        traitsSheetArr.forEach((i) => {
+        lanternaltraitsSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
                     let inventoryItems = {
                         type: i.type,
                         item: i.item,
                         image: i.image,
-                        itemlink: folderURL + "/traits.html?" + traitsCardKey + "=" + i[traitsCardKey],
+                        itemlink: folderURL + "/lanternaltraits.html?" + lanternaltraitsCardKey + "=" + i[lanternaltraitsCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        });
+
+
+         // traits
+        grimtraitsSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/grimtraits.html?" + grimtraitsCardKey + "=" + i[grimtraitsCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
