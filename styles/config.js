@@ -10,15 +10,20 @@ let sheetID = "1bKw3I2_C7YZtmzDHXjZrciYou3N0RE7IVZJ2MS9F5_E";
 /* ------------------------------------------------------------------- */
 let sheetPages = {
 
-    masterlist: "masterlist",
-    masterlistLog: "masterlist log",
-    inventory: "inventory",
-    inventoryLog: "inventory log",
-    items: "items",
-    pets: "pets",
-    prompts: "prompts",
+    masterlist: "Masterlist",
+    masterlistLog: "ML Log",
+    inventory: "Inv",
+    inventoryLog: "Inv Log",
+    pets: "Pets",
+    petslog: "Pets Log",
+    shop: "Shop",
+market: "Market",
+event: "Event Shop",
+    traits: "Traits",
+species: "Species",
+    prompts: "Prompts",
     faq: "faq",
-    staff: "mods",
+    staff: "Mods",
 
 }
 
@@ -34,7 +39,7 @@ let options = {
     index: {
 
         promptSheetPage: sheetPages.prompts,
-        numOfPrompts: 3,
+        numOfPrompts: 1,
 
         staffSheetPage: sheetPages.staff,
         numOfStaff: 8,
@@ -55,36 +60,84 @@ let options = {
         itemAmount: 12,
         itemOrder: "asc",
 
-        filterColumn: 'Design Type',
+       filterColumn: 'Subspecies',
         searchFilterParams: ['ID', 'Owner', 'Designer', 'Artist'],
-        fauxFolderColumn: 'Species',
+        fauxFolderColumn: 'Design Type',
+
+    },
+
+     /* pets Masterlist
+    /* --------------------------------------------------------------- */
+    pets: {
+
+        sheetPage: sheetPages.pets,
+        logSheetPage: sheetPages.petslog,
+
+        itemAmount: 12,
+        itemOrder: "asc",
+
+        fauxFolderColumn: 'Design Type',
+        searchFilterParams: ['ID', 'Owner', 'Designer', 'Artist'],
 
     },
 
 
-    /* Item Catalogue
-    /* --------------------------------------------------------------- */
-    items: {
 
-        sheetPage: sheetPages.items,
+    /* shop Catalogue
+    /* --------------------------------------------------------------- */
+    shop: {
+
+        sheetPage: sheetPages.shop,
     
         itemAmount: 24,
         itemOrder: "asc",
     
-        filterColumn: 'Rarity',
+     fauxFolderColumn: 'Type',
         searchFilterParams: ['Item'],
-        fauxFolderColumn: 'Type',
+    
+    },
+
+     /* market
+    /* --------------------------------------------------------------- */
+    market: {
+
+        sheetPage: sheetPages.market,
+    
+        itemAmount: 24,
+        itemOrder: "asc",
+    
+     fauxFolderColumn: 'Type',
+        searchFilterParams: ['Item'],
     
     },
 
 
+ /* event
+    /* --------------------------------------------------------------- */
+    event: {
+
+        sheetPage: sheetPages.event,
+    
+        itemAmount: 24,
+        itemOrder: "asc",
+    
+     fauxFolderColumn: 'Type',
+        searchFilterParams: ['Item'],
+    
+    },
+
+
+
     /* Invetory
     /* --------------------------------------------------------------- */
-    inventory: {
+         inventory: {
 
         sheetPage: sheetPages.inventory,
-        itemSheetPage: sheetPages.items,
-        logSheetPage: sheetPages.inventoryLog,
+        shopSheetPage: sheetPages.shop,
+        marketSheetPage: sheetPages.market,
+  eventSheetPage: sheetPages.event,
+             traitsSheetPage: sheetPages.traits,
+        logSheetPage: sheetPages.inventorylog,
     
         itemAmount: 24,
         sortTypes: ['Currency', 'Upgrade', 'Redesign', 'Event', 'Trait'],
@@ -100,19 +153,34 @@ let options = {
     
         sheetPage: sheetPages.prompts,
 
-        itemAmount: 24,
+        itemAmount: 12,
         itemOrder: "desc",
 
         searchFilterParams: ['Title'],
     
     },
 
+     /* Traits
+    /* --------------------------------------------------------------- */
+    traits: {
+    
+        sheetPage: sheetPages.traits,
+
+        itemAmount: 12,
+        itemOrder: "desc",
+
+        filterColumn: 'Rarity',
+        searchFilterParams: ['Trait'],
+        fauxFolderColumn: 'Type',
+    
+    },
+
 
     /* Pets
     /* --------------------------------------------------------------- */
-    pets: {
+    species: {
     
-        sheetPage: sheetPages.pets,
+        sheetPage: sheetPages.species,
 
         itemAmount: 24,
         itemOrder: "asc",
