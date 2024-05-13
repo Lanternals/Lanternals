@@ -168,7 +168,7 @@ let options = {
     
         sheetPage: sheetPages.lanternaltraits,
 
-        itemAmount: 12,
+        itemAmount: 18,
         itemOrder: "desc",
 
         filterColumn: 'Rarity',
@@ -183,7 +183,7 @@ let options = {
     
         sheetPage: sheetPages.grimtraits,
 
-        itemAmount: 12,
+        itemAmount: 18,
         itemOrder: "desc",
 
         filterColumn: 'Rarity',
