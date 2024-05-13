@@ -77,14 +77,51 @@
             ----------------------------------------------------------------- -->
             <div class="card p-md-5 p-4 mb-4">
 
-                <h3 class="mb-0"><a href="masterlist.html">Species Masterlist</a></h3>
+                <div class="row no-gutters">
+                    <div class="col-md-10 col-9">
+                        <h3 class="mb-0"><a href="pets.html"><i class="fa-solid fa-cat"></i> Hessdalen Adoption Center (Masterlist)</a></h3>
+                    </div>
+                    <div class="col-md-2 col-3">
+                        <a class="btn btn-primary d-block" href="pets.html" style="font-size:0.83rem;">Reset Filters</a>
+                    </div>
+                </div>
 
                 <!-- Faux Folders
                 <-- Remove this if you'd like to make your own buttons instead!
                 ------------------------------------------------------------------- -->
-                <div style="display:none;" id="filter-buttons">
-                    <hr class="mb-3">
-                    <div class="row no-gutters mx-n1"></div>
+                <hr class="mb-3">
+                <!-- ROW 1 NPC, OFFICIAL DESIGN + GUEST DESIGN -->
+                <div class="row no-gutters m-n1 pb-2 px-3 justify-content-center" id="filter-buttons">
+
+                    <div class="col-md-5 col-7 p-1">
+                        <div class="px-2 pl-md-5">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=myo%20slot"><i class="fa-solid fa-ticket"></i> MYO Slots</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-6 p-1">
+                        <div class="px-2 pr-md-5">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=myo%20design"><i class="fa-solid fa-pencil"></i> MYO Designs</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6 p-1">
+                        <div class="px-2 pl-md-4">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=official%20design"><i class="fa-solid fa-star"></i> Official Designs</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6 p-1">
+                        <div class="px-2">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=npc"><i class="fa-solid fa-shield-cat"></i> NPCs</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6 p-1">
+                        <div class="px-2 pr-md-4">
+                            <a class="btn btn-primary d-block mb-1" href="?designtype=guest%20design"><i class="fa-solid fa-moon"></i> Guest Designs</a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Filters -->
@@ -94,17 +131,17 @@
 
                         <!-- Custom Filter -->
                         <div class="col-md-3 col-12 p-1" style="display: none;">
-                            <select class="form-control bg-faded" id="filter"></select>
+                            <select class="form-control" id="filter"></select>
                         </div>
 
                         <!-- Search Filter -->
                         <div class="col-md-3 col-3 p-1" style="display: none;">
-                            <select class="form-control bg-faded" id="search-filter"></select>
+                            <select class="form-control" id="search-filter"></select>
                         </div>
 
                         <!-- Search Bar -->
                         <div class="col-md col-9 p-1">
-                            <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
+                            <input class="form-control search" type="search" placeholder="Search" id="search">
                         </div>
 
                     </div>
@@ -185,7 +222,7 @@
 
                 <!-- Header -->
                 <h2 class="card-header text-center p-4">
-                    <a class="cardlink design"></a> (<a class="cardlinkalt" href="">#<span class="id"></span></a>)
+                    <a class="cardlink design"></a>
                 </h2>
 
 
@@ -197,7 +234,7 @@
 
 
                         <!-- Image -->
-                        <div class="col-md-5 p-3">
+                        <div class="col-md-6 p-3">
                             <div class="mx-auto w-100 text-center" oncontextmenu="return false">
                                 <img class="image img-fluid" src="">
                             </div>
@@ -205,7 +242,7 @@
 
 
                         <!-- Information List -->
-                        <div class="col-md-7 p-3">
+                        <div class="col-md-6 p-3">
 
                             <!-- Item -->
                             <div class="d-flex justify-content-between mb-2">
@@ -229,15 +266,13 @@
 
                             <!-- Item -->
                             <div class="d-flex justify-content-between mb-2">
-                                <b class="text-muted">Subspecies</b>
-                                <span class="subspecies"></span>
+                                <b class="text-muted">Partner Fae</b>
+                                <a class="pk1link" href="">
+                                    <span class="partnerfae1"></span>
+                                </a>
                             </div>
 
-                            <!-- Item -->
-                            <div class="d-flex justify-content-between mb-2">
-                                <b class="text-muted">Rarity</b>
-                                <span class="rarity"></span>
-                            </div>
+                            <hr>
 
                             <!-- Item -->
                             <div class="d-flex justify-content-between mb-2">
@@ -247,7 +282,7 @@
 
                             <!-- Item -->
                             <div class="d-flex justify-content-between mb-2">
-                                <b class="text-muted">Value</b>
+                                <b class="text-muted">Worth</b>
                                 <span>$<span class="value"></span></span>
                             </div>
 
@@ -261,10 +296,10 @@
 
                             <!-- Item -->
                             <div class="">
-                                <b class="text-muted">Traits</b>
-                                <div class="pl-3 text-pre traits"></div>
+                                <b class="text-muted">Notes</b>
+                                <div class="pl-3 text-pre notes"></div>
                             </div>
-                
+
                             <hr>
 
                             <!-- Item -->
@@ -285,8 +320,8 @@
                     </div>
 
                     <!-- Where to Update -->
-                    <div class="card bg-faded py-2 px-3 mt-3 small text-center">
-                        <b>If you need to update this entry, please do so <a href="">here</a> or in our Discord.</b>
+                    <div class="card py-2 px-3 mt-3 indexcard-bg small text-center">
+                        <b>If you need to update this entry, please do so by messing us on Toyhouse or in the "<a href=" https://discord.gg/px65CdZFnX ">Discord.</a>"</b>
                     </div>
                 </div>
             </div>
@@ -294,6 +329,7 @@
 
 
     </div>
+
 
     <!-- ----------------------------------------------------------------- -->
     <!-- JS                                                                -->
