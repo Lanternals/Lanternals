@@ -526,9 +526,21 @@ const inventory = async (options) => {
     // Decide if the url points to profile or entire gallery
     if (urlParams.has(cardKey)) {
 
-        // Fetch item info from the item sheet
-        let itemSheetArr = await fetchSheet(charadexInfo.itemSheetPage);
-        let itemCardKey = Object.keys(itemSheetArr[0])[0];
+      // Fetch item info from the shop sheet
+        let shopSheetArr = await fetchSheet(charadexInfo.shopSheetPage);
+        let shopCardKey = Object.keys(shopSheetArr[0])[0];
+
+        // Fetch item info from the market sheet
+        let marketSheetArr = await fetchSheet(charadexInfo.marketSheetPage);
+        let marketCardKey = Object.keys(marketSheetArr[0])[0];
+
+         // Fetch item info from the event sheet
+        let eventSheetArr = await fetchSheet(charadexInfo.eventSheetPage);
+        let eventCardKey = Object.keys(eventSheetArr[0])[0];
+
+          // Fetch item info from the trait sheet
+        let traitsSheetArr = await fetchSheet(charadexInfo.traitsSheetPage);
+        let traitsCardKey = Object.keys(traitsSheetArr[0])[0];
 
         // List.js options
         let itemOptions = {
@@ -542,14 +554,60 @@ const inventory = async (options) => {
         // Merge the user's inventory with the item sheet
         // Also remove any items they dont have atm
         let inventoryItemArr = [];
-        itemSheetArr.forEach((i) => {
+       // shop Items merge
+        shopSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
                     let inventoryItems = {
                         type: i.type,
                         item: i.item,
                         image: i.image,
-                        itemlink: folderURL + "/items.html?" + itemCardKey + "=" + i[itemCardKey],
+                        itemlink: folderURL + "/shop.html?" + shopCardKey + "=" + i[shopCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        });
+         // market merge
+        marketSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/market.html?" + marketCardKey + "=" + i[marketCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        });
+ /// event merge
+        eventSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/event.html?" + eventCardKey + "=" + i[eventCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        });
+ // traits
+        traitsSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/traits.html?" + traitsCardKey + "=" + i[traitsCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
