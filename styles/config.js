@@ -20,7 +20,7 @@ let sheetPages = {
 market: "Market",
 event: "Event Shop",
     traits: "Traits",
-species: "Species",
+beasts: "beasts",
     prompts: "Prompts",
     faq: "faq",
     staff: "Mods",
@@ -178,15 +178,15 @@ let options = {
 
     /* Pets
     /* --------------------------------------------------------------- */
-    species: {
+    beasts: {
     
-        sheetPage: sheetPages.species,
+        sheetPage: sheetPages.beasts,
 
         itemAmount: 24,
         itemOrder: "asc",
 
         filterColumn: 'Rarity',
-        searchFilterParams: ['Species'],
+        searchFilterParams: ['species'],
         fauxFolderColumn: 'Type',
     
     },
