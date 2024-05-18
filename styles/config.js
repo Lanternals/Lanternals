@@ -169,7 +169,7 @@ let options = {
         sheetPage: sheetPages.lanternaltraits,
 
         itemAmount: 18,
-        itemOrder: "desc",
+        itemOrder: "asc",
 
         filterColumn: 'Rarity',
         searchFilterParams: ['Trait'],
@@ -184,7 +184,7 @@ let options = {
         sheetPage: sheetPages.grimtraits,
 
         itemAmount: 18,
-        itemOrder: "desc",
+        itemOrder: "asc",
 
         filterColumn: 'Rarity',
         searchFilterParams: ['Trait'],
