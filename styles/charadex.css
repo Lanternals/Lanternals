@@ -15,21 +15,21 @@ body {
   /* ============================================================= */
   /* Primary Color
   ================================================================ */
-  --cd-primary-color:                    #8FB7D4;
+  --cd-primary-color:                    #42b1c4;
   --cd-primary-text-color:               #fff;
 
   /* ============================================================= */
   /* Secondary Color
   ================================================================ */
-  --cd-secondary-color:                  #939799;
+  --cd-secondary-color:                  #4e8f9a;
   --cd-secondary-text-color:             #fff;
 
   /* ============================================================= */
   /* Backgrounds
   ================================================================ */
-  --cd-body-background-color:            #f8f8f8;
-  --cd-content-background-color:         #ffffff;
-  --cd-faded-background-color:           #f8f8f8;
+  --cd-body-background-color:            #303032;
+  --cd-content-background-color:         #515364;
+  --cd-faded-background-color:           #8489b4;
 
   /* Background Extras */
   --cd-body-background-image:             url();
@@ -37,13 +37,13 @@ body {
   /* ============================================================= */
   /* Text
   ================================================================ */
-  --cd-body-text-color:                  #303030;
-  --cd-faded-text-color:                 #575757;
+  --cd-body-text-color:                  #ffffff;
+  --cd-faded-text-color:                 #e0e5ea;
 
   /* ============================================================= */
   /* Borders
   ================================================================ */
-  --cd-border-color:                     rgba(0, 0, 0, 0.125);
+  --cd-border-color:                     #2facc1;
   --cd-border-width:                     1px;
   --cd-border-style:                     solid;
   --cd-border-radius:                    1rem;
@@ -51,10 +51,10 @@ body {
   /* ============================================================= */
   /* Navbar
   ================================================================ */
-  --cd-navbar-background-color:          #222222;
+  --cd-navbar-background-color:          var(--cd-content-background-color);
   --cd-navbar-brand-color:               var(--cd-primary-color);
   --cd-navbar-brand-color-hover:         var(--cd-secondary-color);
-  --cd-navbar-text-color:                var(--cd-content-background-color);
+  --cd-navbar-text-color:               var(--cd-primary-text-color);
   --cd-navbar-link-color:                var(--cd-navbar-text-color);
   --cd-navbar-link-color-hover:          var(--cd-primary-color);
   --cd-navbar-font-family:               var(--cd-header-font-family);
@@ -105,7 +105,7 @@ body {
   /* Link
   ================================================================ */
 
-  --cd-link-text-color:                  #4c8ebd;
+  --cd-link-text-color:                  var(--cd-primary-color);
   --cd-link-text-color-hover:            var(--cd-secondary-color);
 
 
@@ -123,16 +123,16 @@ body {
   ================================================================ */
 
   /* Background */
-  --cd-pagination-background-color:      transparent;
-  --cd-pagination-background-hover:      transparent;
+  --cd-pagination-background-color:      var(--cd-faded-background-color);
+  --cd-pagination-background-hover:      var(--cd-primary-color);
 
   /* Text */
   --cd-pagination-text-color:            var(--cd-faded-text-color);
-  --cd-pagination-text-color-hover:      var(--cd-primary-color);
+  --cd-pagination-text-color-hover:      var(--cd-primary-text-color);
 
   /* Border */
   --cd-pagination-border-radius:         var(--cd-border-radius);
-  --cd-pagination-border-width:          0;
+  --cd-pagination-border-width:         var(--cd-border-width);
   --cd-pagination-border-style:          var(--cd-border-style);
   --cd-pagination-border-color:          var(--cd-border-color);
   --cd-pagination-border-color-hover:    var(--cd-primary-color);
@@ -240,6 +240,7 @@ a:active {
 .navbar {
   background-color: var(--cd-navbar-background-color) !important;
   font-family: var(--cd-navbar-font-family) !important;
+   border-bottom: 1px solid var(--cd-border-color);
   z-index: 2000;
 }
 
@@ -493,12 +494,20 @@ a.badge.badge-primary:active  {
   color: var(--cd-primary-color) !important;
 }
 
+.bg-primary {
+  background-color: var(--cd-content-background-color) !important;
+}
+
 .bg-faded {
   background-color: var(--cd-faded-background-color) !important;
 }
 
 .text-muted {
   color: var(--cd-faded-text-color) !important;
+}
+
+.indexcard-bg {
+  background-color: var(--cd-index-card-background-color) !important;
 }
 
 h1, h2, h3,
