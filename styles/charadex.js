@@ -625,6 +625,10 @@ const inventory = async (options) => {
         let eventSheetArr = await fetchSheet(charadexInfo.eventSheetPage);
         let eventCardKey = Object.keys(eventSheetArr[0])[0];
 
+          // Fetch item info from the adopt sheet
+        let adoptSheetArr = await fetchSheet(charadexInfo.adoptSheetPage);
+        let adoptCardKey = Object.keys(adoptSheetArr[0])[0];
+
           // Fetch item info from the trait sheet
         let lanternaltraitsSheetArr = await fetchSheet(charadexInfo.lanternaltraitsSheetPage);
         let lanternaltraitsCardKey = Object.keys(lanternaltraitsSheetArr[0])[0];
@@ -684,6 +688,21 @@ const inventory = async (options) => {
                         item: i.item,
                         image: i.image,
                         itemlink: folderURL + "/event.html?" + eventCardKey + "=" + i[eventCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        });
+         /// adopt merge
+        adoptSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/adopt.html?" + adoptCardKey + "=" + i[adoptCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
