@@ -13,7 +13,7 @@ let sheetPages = {
     masterlist: "Masterlist",
     masterlistLog: "ML Log",
     inventory: "Inv",
-    inventoryLog: "Inv Log",
+    inventorylog: "Inv Log",
      openadopts: "Open Adopts",
     pets: "Pets",
     petslog: "Pets Log",
