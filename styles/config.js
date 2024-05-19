@@ -150,7 +150,7 @@ let options = {
     /* --------------------------------------------------------------- */
          inventory: {
 
-        sheetPage: sheetPages.inventories,
+        sheetPage: sheetPages.inv,
         shopSheetPage: sheetPages.shop,
         marketSheetPage: sheetPages.market,
   eventSheetPage: sheetPages.event,
