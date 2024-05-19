@@ -14,6 +14,7 @@ let sheetPages = {
     masterlistLog: "ML Log",
     inventory: "Inv",
     inventoryLog: "Inv Log",
+     openadopts: "Open Adopts",
     pets: "Pets",
     petslog: "Pets Log",
     shop: "Shop",
@@ -83,7 +84,20 @@ let options = {
 
     },
 
+    /* Masterlist
+    /* --------------------------------------------------------------- */
+    openadopts: {
 
+        sheetPage: sheetPages.openadopts,
+
+        itemAmount: 12,
+        itemOrder: "asc",
+
+       filterColumn: 'Subspecies',
+        searchFilterParams: ['ID', 'Owner', 'Designer', 'Artist'],
+        fauxFolderColumn: 'Design Type',
+
+    },
 
     /* shop Catalogue
     /* --------------------------------------------------------------- */
