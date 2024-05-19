@@ -28,8 +28,8 @@ body {
   /* Backgrounds
   ================================================================ */
   --cd-body-background-color:            #303032;
-  --cd-content-background-color:         #515364;
-  --cd-faded-background-color:           #8489b4;
+  --cd-content-background-color:         #555e6a;
+  --cd-faded-background-color:           #849eb4;
 
   /* Background Extras */
   --cd-body-background-image:             url();
