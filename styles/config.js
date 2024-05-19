@@ -136,7 +136,7 @@ let options = {
         sheetPage: sheetPages.adopt,
     
         itemAmount: 24,
-        itemOrder: "asc",
+        itemOrder: "desc",
     
      fauxFolderColumn: 'Type',
         searchFilterParams: ['Item'],
@@ -148,9 +148,9 @@ let options = {
 
     /* Invetory
     /* --------------------------------------------------------------- */
-         inventory: {
+         inventories: {
 
-        sheetPage: sheetPages.inventory,
+        sheetPage: sheetPages.inventories,
         shopSheetPage: sheetPages.shop,
         marketSheetPage: sheetPages.market,
   eventSheetPage: sheetPages.event,
