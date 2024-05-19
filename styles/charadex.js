@@ -933,7 +933,7 @@ const frontPage = (options) => {
                 let newestEvents = events.sort(function (a, b) {
                     var c = new Date(a.enddate);
                     var d = new Date(b.enddate);
-                    return d - c;
+                    return d - c; 
                 });
     
                 // Show x Amount on Index
