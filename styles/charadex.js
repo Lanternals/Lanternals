@@ -136,7 +136,7 @@ let getLog = (log, item, key = 'id') => {
             };
         });
 
-        // Create Rows
+     // Create Rows
         let rows = [];
         logArr.forEach((i) => {
             let HTML = $("#log-entry").clone();
@@ -150,7 +150,6 @@ let getLog = (log, item, key = 'id') => {
     }
 }
 
-
 /* ================================================================ */
 /* Get Keys
 /* Makes an array for List.js to use
@@ -161,6 +160,8 @@ let sheetArrayKeys = (arr) => {
     if (itemArray.indexOf('cardlinkalt')) itemArray[itemArray.indexOf('cardlinkalt')] = { name: 'cardlinkalt', attr: 'href' };
     if (itemArray.indexOf('link')) itemArray[itemArray.indexOf('link')] = { name: 'link', attr: 'href' };
     if (itemArray.indexOf('image')) itemArray[itemArray.indexOf('image')] = { name: 'image', attr: 'src' };
+        if (itemArray.indexOf('faepartner1')) itemArray[itemArray.indexOf('faepartner1')] = { name: 'faepartner1', attr: 'href' };
+    if (itemArray.indexOf('pf1link')) itemArray[itemArray.indexOf('pf1link')] = { name: 'pf1link', attr: 'href' };
     return itemArray;
 };
 
@@ -186,7 +187,7 @@ let charadexSearch = (info, searchArr) => {
         $('#search').addClass('filtered');
     }
 
-    let arr = searchArr.map(function (v) { return v.toLowerCase().replace(/\s/g, ""); });
+      let arr = searchArr.map(function (v) { return v.toLowerCase().replace(/\s/g, ""); });
 
     $('#search').on('keyup', () => {
         let selection = $("#search-filter option:selected").val();
@@ -212,7 +213,7 @@ let charadexFilterSelect = (info, arr, key) => {
 
         const filterArr = [...new Set(arr.map(i => i[key]))];
 
-        if (filterArr.length > 2) {
+        if (filterArr.length > 0) {
 
             addOptions(addAll(filterArr), $('#filter'));
 
@@ -233,7 +234,6 @@ let charadexFilterSelect = (info, arr, key) => {
 };
 
 
-
 /* ================================================================ */
 /* Faux Folder Function
 /* ================================================================ */
@@ -250,7 +250,7 @@ let fauxFolderButtons = (array, fauxFolder, params = urlParams) => {
 
         if (urlParamArray.length > 1) {
 
-            // Adds All button
+           // Adds All button
             urlParamArray.unshift($('#charadex-filter-buttons a').text('All').attr("href", baseURL));
 
             // Smacks the links in your flex column
@@ -265,7 +265,7 @@ let fauxFolderButtons = (array, fauxFolder, params = urlParams) => {
 
     }
 
-    // Filters out information based on URL parameters
+     // Filters out information based on URL parameters
     if (params.has(fauxFolder) && fauxFolder) {
         return array.filter((i) => i[fauxFolder].toLowerCase() === params.get(fauxFolder).toLowerCase());
     } else {
@@ -273,6 +273,7 @@ let fauxFolderButtons = (array, fauxFolder, params = urlParams) => {
     }
 
 };
+
 
 
 
@@ -325,7 +326,7 @@ const charadexLarge = async (options) => {
     // Grab the sheet
     let sheetArray = await fetchSheet(charadexInfo.sheetPage);
 
-    // Grab all our url info
+   // Grab all our url info
     let cardKey = Object.keys(sheetArray[0])[0];
     let preParam = urlParamFix(cardKey, charadexInfo.fauxFolderColumn);
 
@@ -336,7 +337,7 @@ const charadexLarge = async (options) => {
     // Reverse based on preference
     charadexInfo.itemOrder == 'asc' ? sheetArray.reverse() : '';
 
-    // Add card links to the remaining array
+   // Add card links to the remaining array
     for (var i in sheetArray) { sheetArray[i].cardlink = baseURL + preParam + sheetArray[i][cardKey]; }
 
     // Decide if the url points to profile or entire gallery
@@ -363,7 +364,7 @@ const charadexLarge = async (options) => {
 
         // Create the Gallery
 
-        let galleryOptions = {
+       let galleryOptions = {
             item: 'charadex-entries',
             valueNames: sheetArrayKeys(sheetArray),
             searchColumns: charadexInfo.searchFilterParams,
@@ -377,7 +378,7 @@ const charadexLarge = async (options) => {
             }],
         };
 
-        // Render Gallery
+       // Render Gallery
         let charadex = new List('charadex-gallery', galleryOptions, sheetArray);
 
         // Make filters workie
@@ -390,7 +391,6 @@ const charadexLarge = async (options) => {
     }
 
 };
-
 
 /* ==================================================================== */
 /* Charadex w/ just Gallery
@@ -682,7 +682,7 @@ const openadopts = async (options) => {
 ======================================================================= */
 const inventory = async (options) => {
 
-    // Sort through options
+   // Sort through options
     const charadexInfo = optionSorter(options);
 
     // Grab the sheet
@@ -692,7 +692,7 @@ const inventory = async (options) => {
     let cardKey = Object.keys(sheetArray[0])[0];
     let preParam = `?${cardKey}=`;
 
-  // Put in alphabetical order
+    // Put in alphabetical order
     sheetArray.sort((a, b) => a.username.toLowerCase().localeCompare(b.username.toLowerCase()));
 
     // Add card links to the remaining array
@@ -845,7 +845,7 @@ const inventory = async (options) => {
         // Group by the item type
         let orderItems = Object.groupBy(inventoryItemArr, ({ type }) => type);
 
-        // Create Rows
+       // Create Rows
         let rows = [];
         for (var i in orderItems) {
             
@@ -870,7 +870,7 @@ const inventory = async (options) => {
 
        };
 
-        // Make items show up
+       // Make items show up
         $("#item-list").html(rows);
 
         // Grab the log sheet and render log
@@ -904,7 +904,7 @@ const inventory = async (options) => {
         // Render Gallery
         let charadex = new List('charadex-gallery', galleryOptions, sheetArray);
 
-       // Make filters workie
+        // Make filters workie
         charadexSearch(charadex, [cardKey]);
 
 
