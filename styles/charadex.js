@@ -604,7 +604,7 @@ const inventory = async (options) => {
     let cardKey = Object.keys(sheetArray[0])[0];
     let preParam = `?${cardKey}=`;
 
-    // Put in alphabetical order
+  // Put in alphabetical order
     sheetArray.sort((a, b) => a.username.toLowerCase().localeCompare(b.username.toLowerCase()));
 
     // Add card links to the remaining array
@@ -637,7 +637,7 @@ const inventory = async (options) => {
         let grimtraitsSheetArr = await fetchSheet(charadexInfo.grimtraitsSheetPage);
         let grimtraitsCardKey = Object.keys(grimtraitsSheetArr[0])[0];
 
-        // List.js options
+       // List.js options
         let itemOptions = {
             valueNames: sheetArrayKeys(sheetArray),
             item: 'charadex-card',
@@ -646,9 +646,10 @@ const inventory = async (options) => {
         // Filter out the right card
         let singleCard = sheetArray.filter((i) => (i[cardKey] === urlParams.get(cardKey)))[0];
 
-        // Merge the user's inventory with the item sheet
+        // Merge the user's inventory with the shops
         // Also remove any items they dont have atm
         let inventoryItemArr = [];
+        
        // shop Items merge
         shopSheetArr.forEach((i) => {
             for (var c in singleCard) {
@@ -664,6 +665,7 @@ const inventory = async (options) => {
                 };
             }
         });
+        
          // market merge
         marketSheetArr.forEach((i) => {
             for (var c in singleCard) {
@@ -679,6 +681,7 @@ const inventory = async (options) => {
                 };
             }
         });
+        
  /// event merge
         eventSheetArr.forEach((i) => {
             for (var c in singleCard) {
@@ -694,6 +697,7 @@ const inventory = async (options) => {
                 };
             }
         });
+        
          /// adopt merge
         adoptSheetArr.forEach((i) => {
             for (var c in singleCard) {
@@ -709,6 +713,7 @@ const inventory = async (options) => {
                 };
             }
         });
+        
  // traits
         lanternaltraitsSheetArr.forEach((i) => {
             for (var c in singleCard) {
@@ -755,7 +760,7 @@ const inventory = async (options) => {
         // Create Rows
         let rows = [];
         for (var i in orderItems) {
-
+            
             // Get the headers and cols
             let cols = [];
             orderItems[i].forEach((v) => {
@@ -775,7 +780,7 @@ const inventory = async (options) => {
 
             rows.push(rowHTML);
 
-        };
+       };
 
         // Make items show up
         $("#item-list").html(rows);
@@ -811,14 +816,13 @@ const inventory = async (options) => {
         // Render Gallery
         let charadex = new List('charadex-gallery', galleryOptions, sheetArray);
 
-        // Make filters workie
+       // Make filters workie
         charadexSearch(charadex, [cardKey]);
 
 
     }
 
 };
-
 
 /* ==================================================================== */
 /* This is just to fill out some of the front page automatically
