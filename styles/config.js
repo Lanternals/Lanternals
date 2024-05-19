@@ -19,6 +19,7 @@ let sheetPages = {
     shop: "Shop",
 market: "Market",
 event: "Event Shop",
+    adopt: "Adopt Shop",
     lanternaltraits: "LantTraits",
       grimtraits: "GrimTraits",
 bestiary: "bestiary",
@@ -128,6 +129,22 @@ let options = {
     },
 
 
+     /* adopt
+    /* --------------------------------------------------------------- */
+    adopt: {
+
+        sheetPage: sheetPages.adopt,
+    
+        itemAmount: 24,
+        itemOrder: "asc",
+    
+     fauxFolderColumn: 'Type',
+        searchFilterParams: ['Item'],
+    
+    },
+
+
+
 
     /* Invetory
     /* --------------------------------------------------------------- */
@@ -137,12 +154,13 @@ let options = {
         shopSheetPage: sheetPages.shop,
         marketSheetPage: sheetPages.market,
   eventSheetPage: sheetPages.event,
+              adoptSheetPage: sheetPages.adopt,
              lanternaltraitsSheetPage: sheetPages.lanternaltraits,
               grimtraitsSheetPage: sheetPages.grimtraits,
         logSheetPage: sheetPages.inventorylog,
     
         itemAmount: 24,
-        sortTypes: ['Currency', 'Upgrade', 'Redesign', 'Event', 'Trait'],
+        sortTypes: ['Currency', 'Design Ticket', 'Upgrade', 'Redesign', 'Event', 'Trait'],
         
         searchFilterParams: ['Username'],
     
