@@ -160,7 +160,7 @@ let sheetArrayKeys = (arr) => {
     if (itemArray.indexOf('cardlinkalt')) itemArray[itemArray.indexOf('cardlinkalt')] = { name: 'cardlinkalt', attr: 'href' };
     if (itemArray.indexOf('link')) itemArray[itemArray.indexOf('link')] = { name: 'link', attr: 'href' };
     if (itemArray.indexOf('image')) itemArray[itemArray.indexOf('image')] = { name: 'image', attr: 'src' };
-        if (itemArray.indexOf('faepartner1')) itemArray[itemArray.indexOf('faepartner1')] = { name: 'faepartner1', attr: 'href' };
+        if (itemArray.indexOf('partnerfae1')) itemArray[itemArray.indexOf('partnerfae1')] = { name: 'partnerfae1', attr: 'href' };
     if (itemArray.indexOf('pf1link')) itemArray[itemArray.indexOf('pf1link')] = { name: 'pf1link', attr: 'href' };
     return itemArray;
 };
