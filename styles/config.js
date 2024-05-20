@@ -205,7 +205,7 @@ let options = {
 
         filterColumn: 'Rarity',
         searchFilterParams: ['Trait'],
-        fauxFolderColumn: 'Type',
+        fauxFolderColumn: 'Rarity',
     
     },
     
@@ -220,7 +220,7 @@ let options = {
 
         filterColumn: 'Rarity',
         searchFilterParams: ['Trait'],
-        fauxFolderColumn: 'Type',
+        fauxFolderColumn: 'Rarity',
     
     },
 
