@@ -174,7 +174,7 @@ let options = {
         logSheetPage: sheetPages.inventorylog,
     
         itemAmount: 24,
-        sortTypes: ['Currency', 'Design Ticket', 'Upgrade', 'Redesign', 'Event', 'Trait'],
+        sortTypes: ['Currency', 'Design Token', 'Upgrade', 'Redesign', 'Event', 'Trait'],
         
         searchFilterParams: ['Username'],
     
