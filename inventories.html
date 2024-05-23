@@ -14,9 +14,9 @@
     <title>Inventory | Lanternals</title>
     <meta property="title" content="Inventory | Lanternals" />
     <meta property="type" content="website" />
-    <meta property="url" content="https://lanternals.github.io/Lanternals/inventories.html" />
+     <meta property="url" content="https://lanternals.github.io/Lanternals/index.html" />
     <meta property="image" content="assets/meta.png" />
-    <meta name="description" content="A site for the Kadonul closed species by Drakism.">
+    <meta name="description" content="Masterlist and information hub for the Lanternals closed species.">
 
     <!-- No AI scraping directives -->
     <meta name="robots" content="noai">
@@ -78,7 +78,8 @@
             ----------------------------------------------------------------- -->
             <div class="card p-md-5 p-4 mb-4">
 
-                <h3 class="mb-0"><a href="inventories.html"><i class="fa-solid fa-box-archive"></i> Bank/Inventory</a></h3>
+                <h3 class="mb-0"><a href="inventories.html"> User Inventories</a></h3>
+
 
                 <!-- Faux Folders
                 <-- Remove this if you'd like to make your own buttons instead!
@@ -95,11 +96,12 @@
 
                         <!-- Search Bar -->
                         <div class="col-md col-9 p-1">
-                            <input class="form-control search" type="search" placeholder="Search" id="search">
+                            <input class="form-control bg-faded search" type="search" placeholder="Search" id="search">
                         </div>
 
                     </div>
                 </div>
+
 
                 <!-- Pagination -->
                 <div style="display: none;" id="charadex-pagination">
@@ -114,9 +116,12 @@
             </div>
 
 
+
+
             <!-- Repeated Items Render Here
             ----------------------------------------------------------------- -->
-            <ul class="row no-gutters list list-unstyled m-n1"></ul>
+           <ul class="row no-gutters list list-unstyled m-n1"></ul>
+
 
         </div>
 
@@ -142,11 +147,12 @@
 
         <!-- Gallery Items
         ------------------------------------------------------------------- -->
-        <li class="col-md-4 col-sm-6 p-1" id="charadex-entries">
+       <li class="col-md-4 col-sm-6 p-1" id="charadex-entries">
             <a class="card px-4 py-3 cardlink text-truncate" href="">
                 <h5 class="m-0"><span class="username"></span></h5>
             </a>
         </li>
+
 
 
         <!-- Singular Item
@@ -154,7 +160,7 @@
         <li class="col-12 p-2" id="charadex-card">
             <div class="card">
 
-                <!-- Header -->
+               <!-- Header -->
                 <h2 class="card-header text-center p-4"><span class="text-capitalize username"></span>'s Inventory</h2>
 
                 <!-- Items -->
@@ -169,7 +175,8 @@
                         <div class="row no-gutters m-n2" id="item-list-row"></div>
                     </div>
 
-                    <!-- Each section's items -->
+
+                   <!-- Each section's items -->
                     <div class="col-md-4 col-6 p-2" id="item-list-col">
                         <div class="card d-block text-center bg-faded p-2">
                             <img class="item-img img-fluid gallery-img" src="">
@@ -182,6 +189,7 @@
                 </div>
 
                 <hr>
+
 
                <div class="p-md-5 p-4">
                     <h4>Transaction Log</h4>
@@ -200,11 +208,12 @@
 
     </div>
 
+
     <!-- ----------------------------------------------------------------- -->
     <!-- JS                                                                -->
     <!-- ----------------------------------------------------------------- -->
 
-    <!-- JQuery -->
+   <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap -->
@@ -213,10 +222,12 @@
     <!-- List.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.0/list.min.js" crossorigin="anonymous"></script>
 
+
     <!-- Charadex Script -->
     <script src="styles/config.js"></script>
     <script src="styles/charadex.js"></script>
-    <script>inventory(options.inventory);</script>
+     <script>inventory(options.inventory);</script>
+
 
 
 </body>
