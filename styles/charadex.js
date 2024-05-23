@@ -160,7 +160,6 @@ let sheetArrayKeys = (arr) => {
     if (itemArray.indexOf('cardlinkalt')) itemArray[itemArray.indexOf('cardlinkalt')] = { name: 'cardlinkalt', attr: 'href' };
     if (itemArray.indexOf('link')) itemArray[itemArray.indexOf('link')] = { name: 'link', attr: 'href' };
     if (itemArray.indexOf('image')) itemArray[itemArray.indexOf('image')] = { name: 'image', attr: 'src' };
-        if (itemArray.indexOf('partnerfae1')) itemArray[itemArray.indexOf('partnerfae1')] = { name: 'partnerfae1', attr: 'href' };
     if (itemArray.indexOf('pf1link')) itemArray[itemArray.indexOf('pf1link')] = { name: 'pf1link', attr: 'href' };
     return itemArray;
 };
@@ -682,7 +681,7 @@ const openadopts = async (options) => {
 ======================================================================= */
 const inventory = async (options) => {
 
-   // Sort through options
+    // Sort through options
     const charadexInfo = optionSorter(options);
 
     // Grab the sheet
@@ -725,7 +724,7 @@ const inventory = async (options) => {
         let grimtraitsSheetArr = await fetchSheet(charadexInfo.grimtraitsSheetPage);
         let grimtraitsCardKey = Object.keys(grimtraitsSheetArr[0])[0];
 
-       // List.js options
+      // List.js options
         let itemOptions = {
             valueNames: sheetArrayKeys(sheetArray),
             item: 'charadex-card',
@@ -835,7 +834,7 @@ const inventory = async (options) => {
             }
         });
 
-        // Sort items by type if applicable
+       // Sort items by type if applicable
         if (charadexInfo.sortTypes) {
             inventoryItemArr.sort(function (a, b) {
                 return charadexInfo.sortTypes.indexOf(a.type) - charadexInfo.sortTypes.indexOf(b.type);
@@ -845,7 +844,7 @@ const inventory = async (options) => {
         // Group by the item type
         let orderItems = Object.groupBy(inventoryItemArr, ({ type }) => type);
 
-       // Create Rows
+        // Create Rows
         let rows = [];
         for (var i in orderItems) {
             
@@ -868,9 +867,9 @@ const inventory = async (options) => {
 
             rows.push(rowHTML);
 
-       };
+        };
 
-       // Make items show up
+        // Make items show up
         $("#item-list").html(rows);
 
         // Grab the log sheet and render log
