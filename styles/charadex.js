@@ -32,7 +32,7 @@ const scrubData = (sheetData) => {
         });
     }
 
-    // Scrubs columns and puts them in a readable object
+   // Scrubs columns and puts them in a readable object
     const scrubbedData = [];
     cleanJson.table.rows.forEach((info, num) => {
         const row = {};
@@ -48,6 +48,7 @@ const scrubData = (sheetData) => {
     return publicData;
 
 }
+
 
 
 /* ================================================================ */
@@ -71,7 +72,8 @@ let optionSorter = (options) => {
 
     }
 
-    // Merge options
+
+   // Merge options
     let mergedOptions = {...userOptions, ...defaultOptions};
 
     return mergedOptions;
@@ -102,10 +104,12 @@ let addAll = (key) => {
 
 let addOptions = (arr, filter) => {
     arr.forEach((val) => {
-        let optionHTML = document.createElement('option');
-        optionHTML.value = val.toLowerCase().replace(/\s/g, "");
-        optionHTML.textContent = val;
-        filter.append(optionHTML);
+        if (val) {
+            let optionHTML = document.createElement('option');
+            optionHTML.value = val.toLowerCase().replace(/\s/g, "");
+            optionHTML.textContent = val;
+            filter.append(optionHTML);
+        }
     });
 };
 
@@ -117,6 +121,7 @@ let loadPage = () => {
 let urlParamFix = (key, folder, params = urlParams) => {
     return '?' + (url.search.includes(folder) ? folder + '=' + params.get(folder) + '&' : '') + `${key}=`;
 };
+
 
 
 /* ================================================================ */
@@ -160,7 +165,6 @@ let sheetArrayKeys = (arr) => {
     if (itemArray.indexOf('cardlinkalt')) itemArray[itemArray.indexOf('cardlinkalt')] = { name: 'cardlinkalt', attr: 'href' };
     if (itemArray.indexOf('link')) itemArray[itemArray.indexOf('link')] = { name: 'link', attr: 'href' };
     if (itemArray.indexOf('image')) itemArray[itemArray.indexOf('image')] = { name: 'image', attr: 'src' };
-    if (itemArray.indexOf('pf1link')) itemArray[itemArray.indexOf('pf1link')] = { name: 'pf1link', attr: 'href' };
     return itemArray;
 };
 
