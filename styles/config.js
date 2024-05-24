@@ -114,6 +114,20 @@ let options = {
     
     },
 
+     /* itemlist Catalogue
+    /* --------------------------------------------------------------- */
+    itemlist: {
+
+        sheetPage: sheetPages.itemlist,
+    
+        itemAmount: 24,
+        itemOrder: "asc",
+    
+     fauxFolderColumn: 'Type',
+        searchFilterParams: ['Item'],
+    
+    },
+
      /* market
     /* --------------------------------------------------------------- */
     market: {
