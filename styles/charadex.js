@@ -712,6 +712,22 @@ const inventory = async (options) => {
         let marketSheetArr = await fetchSheet(charadexInfo.marketSheetPage);
         let marketCardKey = Object.keys(marketSheetArr[0])[0];
 
+          // Fetch item info from the event sheet
+        let eventSheetArr = await fetchSheet(charadexInfo.eventSheetPage);
+        let eventCardKey = Object.keys(eventSheetArr[0])[0];
+
+        // Fetch item info from the adopt sheet
+        let adoptSheetArr = await fetchSheet(charadexInfo.adoptSheetPage);
+        let adoptCardKey = Object.keys(adoptSheetArr[0])[0];
+
+            // Fetch item info from the event sheet
+        let lanternaltraitsSheetArr = await fetchSheet(charadexInfo.lanternaltraitsSheetPage);
+        let lanternaltraitsCardKey = Object.keys(lanternaltraitsSheetArr[0])[0];
+
+        // Fetch item info from the adopt sheet
+        let grimtraitsSheetArr = await fetchSheet(charadexInfo.grimtraitsSheetPage);
+        let grimtraitsCardKey = Object.keys(grimtraitsSheetArr[0])[0];
+
         // List.js options
         let itemOptions = {
             valueNames: sheetArrayKeys(sheetArray),
@@ -739,7 +755,8 @@ const inventory = async (options) => {
                 };
             }
         }),
-        // market / Items merge
+
+             // market / Items merge
         marketSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
@@ -748,6 +765,69 @@ const inventory = async (options) => {
                         item: i.item,
                         image: i.image,
                         itemlink: folderURL + "/market.html?" + marketCardKey + "=" + i[marketCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        }),
+
+             // event / Items merge
+        eventSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/event.html?" + eventCardKey + "=" + i[eventCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        }),
+
+             // adopt / Items merge
+        adoptSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/adopt.html?" + adoptCardKey + "=" + i[adoptCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        }),
+
+             // lant / Items merge
+        lanternaltraitsSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/lanternaltraits.html?" + lanternaltraitsCardKey + "=" + i[lanternaltraitsCardKey],
+                        amount: singleCard[keyCreator(i.item)],
+                    };
+                    inventoryItemArr.push(inventoryItems);
+                };
+            }
+        }),
+        // grim / Items merge
+        grimtraitsSheetArr.forEach((i) => {
+            for (var c in singleCard) {
+                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
+                    let inventoryItems = {
+                        type: i.type,
+                        item: i.item,
+                        image: i.image,
+                        itemlink: folderURL + "/grimtraits.html?" + grimtraitsCardKey + "=" + i[grimtraitsCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
