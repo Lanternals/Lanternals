@@ -704,13 +704,13 @@ const inventory = async (options) => {
     // Decide if the url points to profile or entire gallery
     if (urlParams.has(cardKey)) {
 
-        // Fetch item info from the kadoshop sheet
-        let kadoshopSheetArr = await fetchSheet(charadexInfo.kadoshopSheetPage);
-        let kadoshopCardKey = Object.keys(kadoshopSheetArr[0])[0];
+        // Fetch item info from the shop sheet
+        let shopSheetArr = await fetchSheet(charadexInfo.shopSheetPage);
+        let shopCardKey = Object.keys(shopSheetArr[0])[0];
 
-        // Fetch item info from the huskshop sheet
-        let huskshopSheetArr = await fetchSheet(charadexInfo.huskshopSheetPage);
-        let huskshopCardKey = Object.keys(huskshopSheetArr[0])[0];
+        // Fetch item info from the market sheet
+        let marketSheetArr = await fetchSheet(charadexInfo.marketSheetPage);
+        let marketCardKey = Object.keys(marketSheetArr[0])[0];
 
         // List.js options
         let itemOptions = {
@@ -724,30 +724,30 @@ const inventory = async (options) => {
         // Merge the user's inventory with the kadoshop + huskshop sheet
         // Also remove any items they dont have atm
         let inventoryItemArr = [];
-        // Kadoshop / Kadonul shop Items merge
-        kadoshopSheetArr.forEach((i) => {
+        // shop / Items merge
+        shopSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
                     let inventoryItems = {
                         type: i.type,
                         item: i.item,
                         image: i.image,
-                        itemlink: folderURL + "/kadoshop.html?" + kadoshopCardKey + "=" + i[kadoshopCardKey],
+                        itemlink: folderURL + "/shop.html?" + shopCardKey + "=" + i[shopCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
                 };
             }
         }),
-        // Huskshop / Huskling shop Items merge
-        huskshopSheetArr.forEach((i) => {
+        // market / Items merge
+        marketSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
                     let inventoryItems = {
                         type: i.type,
                         item: i.item,
                         image: i.image,
-                        itemlink: folderURL + "/huskshop.html?" + huskshopCardKey + "=" + i[huskshopCardKey],
+                        itemlink: folderURL + "/market.html?" + marketCardKey + "=" + i[marketCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
