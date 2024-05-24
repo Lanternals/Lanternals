@@ -705,20 +705,8 @@ const inventory = async (options) => {
     if (urlParams.has(cardKey)) {
 
         // Fetch item info from the shop sheet
-        let shopSheetArr = await fetchSheet(charadexInfo.shopSheetPage);
-        let shopCardKey = Object.keys(shopSheetArr[0])[0];
-
-        // Fetch item info from the market sheet
-        let marketSheetArr = await fetchSheet(charadexInfo.marketSheetPage);
-        let marketCardKey = Object.keys(marketSheetArr[0])[0];
-
-          // Fetch item info from the event sheet
-        let eventSheetArr = await fetchSheet(charadexInfo.eventSheetPage);
-        let eventCardKey = Object.keys(eventSheetArr[0])[0];
-
-        // Fetch item info from the adopt sheet
-        let adoptSheetArr = await fetchSheet(charadexInfo.adoptSheetPage);
-        let adoptCardKey = Object.keys(adoptSheetArr[0])[0];
+        let itemlistSheetArr = await fetchSheet(charadexInfo.itemlistSheetPage);
+        let itemlistCardKey = Object.keys(itemlistSheetArr[0])[0];
 
             // Fetch item info from the event sheet
         let lanternaltraitsSheetArr = await fetchSheet(charadexInfo.lanternaltraitsSheetPage);
@@ -741,62 +729,14 @@ const inventory = async (options) => {
         // Also remove any items they dont have atm
         let inventoryItemArr = [];
         // shop / Items merge
-        shopSheetArr.forEach((i) => {
+        itemlistSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
                     let inventoryItems = {
                         type: i.type,
                         item: i.item,
                         image: i.image,
-                        itemlink: folderURL + "/shop.html?" + shopCardKey + "=" + i[shopCardKey],
-                        amount: singleCard[keyCreator(i.item)],
-                    };
-                    inventoryItemArr.push(inventoryItems);
-                };
-            }
-        }),
-
-             // market / Items merge
-        marketSheetArr.forEach((i) => {
-            for (var c in singleCard) {
-                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
-                    let inventoryItems = {
-                        type: i.type,
-                        item: i.item,
-                        image: i.image,
-                        itemlink: folderURL + "/market.html?" + marketCardKey + "=" + i[marketCardKey],
-                        amount: singleCard[keyCreator(i.item)],
-                    };
-                    inventoryItemArr.push(inventoryItems);
-                };
-            }
-        }),
-
-             // event / Items merge
-        eventSheetArr.forEach((i) => {
-            for (var c in singleCard) {
-                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
-                    let inventoryItems = {
-                        type: i.type,
-                        item: i.item,
-                        image: i.image,
-                        itemlink: folderURL + "/event.html?" + eventCardKey + "=" + i[eventCardKey],
-                        amount: singleCard[keyCreator(i.item)],
-                    };
-                    inventoryItemArr.push(inventoryItems);
-                };
-            }
-        }),
-
-             // adopt / Items merge
-        adoptSheetArr.forEach((i) => {
-            for (var c in singleCard) {
-                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
-                    let inventoryItems = {
-                        type: i.type,
-                        item: i.item,
-                        image: i.image,
-                        itemlink: folderURL + "/adopt.html?" + adoptCardKey + "=" + i[adoptCardKey],
+                        itemlink: folderURL + "/itemlist.html?" + itemlistCardKey + "=" + i[itemlistCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
