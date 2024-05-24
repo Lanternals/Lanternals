@@ -167,8 +167,6 @@ let options = {
 
         sheetPage: sheetPages.inventory,
         itemlistSheetPage: sheetPages.itemlist,
-             lanternaltraitsSheetPage: sheetPages.lanternaltraits,
-              grimtraitsSheetPage: sheetPages.grimtraits,
         logSheetPage: sheetPages.inventorylog,
     
         itemAmount: 24,
