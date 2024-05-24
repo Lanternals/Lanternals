@@ -704,7 +704,7 @@ const inventory = async (options) => {
     // Decide if the url points to profile or entire gallery
     if (urlParams.has(cardKey)) {
 
-      // Fetch item info from the shop sheet
+       // Fetch item info from the shop sheet
         let shopSheetArr = await fetchSheet(charadexInfo.shopSheetPage);
         let shopCardKey = Object.keys(shopSheetArr[0])[0];
 
@@ -712,21 +712,21 @@ const inventory = async (options) => {
         let marketSheetArr = await fetchSheet(charadexInfo.marketSheetPage);
         let marketCardKey = Object.keys(marketSheetArr[0])[0];
 
-         // Fetch item info from the event sheet
+       // Fetch item info from the event sheet
         let eventSheetArr = await fetchSheet(charadexInfo.eventSheetPage);
         let eventCardKey = Object.keys(eventSheetArr[0])[0];
 
-          // Fetch item info from the adopt sheet
+        // Fetch item info from the adopt sheet
         let adoptSheetArr = await fetchSheet(charadexInfo.adoptSheetPage);
         let adoptCardKey = Object.keys(adoptSheetArr[0])[0];
 
-          // Fetch item info from the trait sheet
-        let lanternaltraitsSheetArr = await fetchSheet(charadexInfo.lanternaltraitsSheetPage);
-        let lanternaltraitsCardKey = Object.keys(lanternaltraitsSheetArr[0])[0];
-
-         // Fetch item info from the trait sheet
+    // Fetch item info from the trait sheet
         let grimtraitsSheetArr = await fetchSheet(charadexInfo.grimtraitsSheetPage);
         let grimtraitsCardKey = Object.keys(grimtraitsSheetArr[0])[0];
+
+        // Fetch item info from the trait sheet
+        let lanternaltraitsSheetArr = await fetchSheet(charadexInfo.lanternaltraitsSheetPage);
+        let lanternaltraitsCardKey = Object.keys(lanternaltraitsSheetArr[0])[0];
 
       // List.js options
         let itemOptions = {
