@@ -704,31 +704,15 @@ const inventory = async (options) => {
     // Decide if the url points to profile or entire gallery
     if (urlParams.has(cardKey)) {
 
-       // Fetch item info from the shop sheet
-        let shopSheetArr = await fetchSheet(charadexInfo.shopSheetPage);
-        let shopCardKey = Object.keys(shopSheetArr[0])[0];
+        // Fetch item info from the kadoshop sheet
+        let kadoshopSheetArr = await fetchSheet(charadexInfo.kadoshopSheetPage);
+        let kadoshopCardKey = Object.keys(kadoshopSheetArr[0])[0];
 
-        // Fetch item info from the market sheet
-        let marketSheetArr = await fetchSheet(charadexInfo.marketSheetPage);
-        let marketCardKey = Object.keys(marketSheetArr[0])[0];
+        // Fetch item info from the huskshop sheet
+        let huskshopSheetArr = await fetchSheet(charadexInfo.huskshopSheetPage);
+        let huskshopCardKey = Object.keys(huskshopSheetArr[0])[0];
 
-       // Fetch item info from the event sheet
-        let eventSheetArr = await fetchSheet(charadexInfo.eventSheetPage);
-        let eventCardKey = Object.keys(eventSheetArr[0])[0];
-
-        // Fetch item info from the adopt sheet
-        let adoptSheetArr = await fetchSheet(charadexInfo.adoptSheetPage);
-        let adoptCardKey = Object.keys(adoptSheetArr[0])[0];
-
-    // Fetch item info from the trait sheet
-        let grimtraitsSheetArr = await fetchSheet(charadexInfo.grimtraitsSheetPage);
-        let grimtraitsCardKey = Object.keys(grimtraitsSheetArr[0])[0];
-
-        // Fetch item info from the trait sheet
-        let lanternaltraitsSheetArr = await fetchSheet(charadexInfo.lanternaltraitsSheetPage);
-        let lanternaltraitsCardKey = Object.keys(lanternaltraitsSheetArr[0])[0];
-
-      // List.js options
+        // List.js options
         let itemOptions = {
             valueNames: sheetArrayKeys(sheetArray),
             item: 'charadex-card',
@@ -737,83 +721,33 @@ const inventory = async (options) => {
         // Filter out the right card
         let singleCard = sheetArray.filter((i) => (i[cardKey] === urlParams.get(cardKey)))[0];
 
-        // Merge the user's inventory with the shops
+        // Merge the user's inventory with the kadoshop + huskshop sheet
         // Also remove any items they dont have atm
         let inventoryItemArr = [];
-        
-       // shop Items merge
-        shopSheetArr.forEach((i) => {
+        // Kadoshop / Kadonul shop Items merge
+        kadoshopSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
                     let inventoryItems = {
                         type: i.type,
                         item: i.item,
                         image: i.image,
-                        itemlink: folderURL + "/shop.html?" + shopCardKey + "=" + i[shopCardKey],
+                        itemlink: folderURL + "/kadoshop.html?" + kadoshopCardKey + "=" + i[kadoshopCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
                 };
             }
-        });
-        
-         // market merge
-        marketSheetArr.forEach((i) => {
+        }),
+        // Huskshop / Huskling shop Items merge
+        huskshopSheetArr.forEach((i) => {
             for (var c in singleCard) {
                 if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
                     let inventoryItems = {
                         type: i.type,
                         item: i.item,
                         image: i.image,
-                        itemlink: folderURL + "/market.html?" + marketCardKey + "=" + i[marketCardKey],
-                        amount: singleCard[keyCreator(i.item)],
-                    };
-                    inventoryItemArr.push(inventoryItems);
-                };
-            }
-        });
-        
- /// event merge
-        eventSheetArr.forEach((i) => {
-            for (var c in singleCard) {
-                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
-                    let inventoryItems = {
-                        type: i.type,
-                        item: i.item,
-                        image: i.image,
-                        itemlink: folderURL + "/event.html?" + eventCardKey + "=" + i[eventCardKey],
-                        amount: singleCard[keyCreator(i.item)],
-                    };
-                    inventoryItemArr.push(inventoryItems);
-                };
-            }
-        });
-        
-         /// adopt merge
-        adoptSheetArr.forEach((i) => {
-            for (var c in singleCard) {
-                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
-                    let inventoryItems = {
-                        type: i.type,
-                        item: i.item,
-                        image: i.image,
-                        itemlink: folderURL + "/adopt.html?" + adoptCardKey + "=" + i[adoptCardKey],
-                        amount: singleCard[keyCreator(i.item)],
-                    };
-                    inventoryItemArr.push(inventoryItems);
-                };
-            }
-        });
-        
- // traits
-        lanternaltraitsSheetArr.forEach((i) => {
-            for (var c in singleCard) {
-                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
-                    let inventoryItems = {
-                        type: i.type,
-                        item: i.item,
-                        image: i.image,
-                        itemlink: folderURL + "/lanternaltraits.html?" + lanternaltraitsCardKey + "=" + i[lanternaltraitsCardKey],
+                        itemlink: folderURL + "/huskshop.html?" + huskshopCardKey + "=" + i[huskshopCardKey],
                         amount: singleCard[keyCreator(i.item)],
                     };
                     inventoryItemArr.push(inventoryItems);
@@ -821,24 +755,7 @@ const inventory = async (options) => {
             }
         });
 
-
-         // traits
-        grimtraitsSheetArr.forEach((i) => {
-            for (var c in singleCard) {
-                if (c === keyCreator(i.item) && ((singleCard[keyCreator(i.item)] !== "0" && singleCard[keyCreator(i.item)] !== ""))) {
-                    let inventoryItems = {
-                        type: i.type,
-                        item: i.item,
-                        image: i.image,
-                        itemlink: folderURL + "/grimtraits.html?" + grimtraitsCardKey + "=" + i[grimtraitsCardKey],
-                        amount: singleCard[keyCreator(i.item)],
-                    };
-                    inventoryItemArr.push(inventoryItems);
-                };
-            }
-        });
-
-       // Sort items by type if applicable
+        // Sort items by type if applicable
         if (charadexInfo.sortTypes) {
             inventoryItemArr.sort(function (a, b) {
                 return charadexInfo.sortTypes.indexOf(a.type) - charadexInfo.sortTypes.indexOf(b.type);
@@ -851,7 +768,7 @@ const inventory = async (options) => {
         // Create Rows
         let rows = [];
         for (var i in orderItems) {
-            
+
             // Get the headers and cols
             let cols = [];
             orderItems[i].forEach((v) => {
