@@ -14,6 +14,7 @@ let sheetPages = {
     masterlistLog: "ML Log",
     inventory: "Inv",
     inventorylog: "Inv Log",
+    itemlist: "ItemList",
      openadopts: "Open Adopts",
     pets: "Pets",
     petslog: "Pets Log",
@@ -165,10 +166,7 @@ let options = {
     inventory: {
 
         sheetPage: sheetPages.inventory,
-        shopSheetPage: sheetPages.shop,
-        marketSheetPage: sheetPages.market,
-  eventSheetPage: sheetPages.event,
-              adoptSheetPage: sheetPages.adopt,
+        itemlistSheetPage: sheetPages.itemlist,
              lanternaltraitsSheetPage: sheetPages.lanternaltraits,
               grimtraitsSheetPage: sheetPages.grimtraits,
         logSheetPage: sheetPages.inventorylog,
