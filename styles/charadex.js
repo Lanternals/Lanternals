@@ -916,6 +916,23 @@ const frontPage = (options) => {
 
 }; 
 
+/* ==================================================================== */
+/* Progress Bar
+======================================================================= */
+async function updateProgressBar() {
+      // Grab the sheet
+    let sheetArray = await fetchSheet(charadexInfo.factionssheetPage);
+    
+  try {
+    // Assume the percentage value is in the first row under column name 'Progress'
+    const progressValue = data[0].Progress; // e.g., 75
+    
+    const progressBar = document.getElementByClassName('progress-track');
+    progressBar.style.width = progressValue + '%';
+  } 
+}
+
+updateProgressBar();
 
 /* ==================================================================== */
 /* Softload pages
