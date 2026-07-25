@@ -651,3 +651,11 @@ p:last-child {
         font-size: 3rem;
     }
 }
+
+/* Progress Bars */
+.progress {
+    background-color: var(--cd-secondary-color);
+}
+.progress-track {
+    background-color:   var(--cd-primary-color);
+}
