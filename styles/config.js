@@ -28,6 +28,7 @@ bestiary: "bestiary",
     prompts: "Prompts",
     faq: "faq",
     staff: "Mods",
+    factions: "Factions",
 
 }
 
@@ -198,6 +199,19 @@ let options = {
         sheetPage: sheetPages.prompts,
 
         itemAmount: 12,
+        itemOrder: "desc",
+
+        searchFilterParams: ['Title'],
+    
+    },
+
+        /* Factions
+    /* --------------------------------------------------------------- */
+    factions: {
+    
+        sheetPage: sheetPages.factions,
+
+        itemAmount: 6,
         itemOrder: "desc",
 
         searchFilterParams: ['Title'],
